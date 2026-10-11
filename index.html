@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>⭐ My Stars</title>
+<style>
+:root{--bg:linear-gradient(160deg,#f3e8ff,#ffe0f0 55%,#e3d7ff);--card:rgba(255,255,255,.88);--tx:#3a2450;--mu:#8b7a9c;--pr:#a855f7;--pk:#ec4899;--gd:#ffc933;--gn:#2fbf80;--rd:#ef5b5b;--bd:#ead9fb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:linear-gradient(160deg,#241638,#3a1840 55%,#2a1f4d);--card:rgba(50,36,72,.9);--tx:#f6ecff;--mu:#b8a6cc;--bd:#4b3569}}
+:root[data-theme="dark"]{--bg:linear-gradient(160deg,#241638,#3a1840 55%,#2a1f4d);--card:rgba(50,36,72,.9);--tx:#f6ecff;--mu:#b8a6cc;--bd:#4b3569}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg) fixed;color:var(--tx);font-family:Tahoma,"Vazirmatn",system-ui,sans-serif}
+#app{max-width:520px;margin:auto;padding:12px 14px 96px;position:relative;z-index:1}
+.deco{position:fixed;inset:0;pointer-events:none;font-size:30px;opacity:.22;z-index:0}
+.deco span{position:absolute;animation:bob 4s infinite ease-in-out}
+h1{margin:6px 0;font-size:21px;background:linear-gradient(90deg,var(--pr),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lang{display:flex;gap:6px;justify-content:center;margin-bottom:4px}
+.lang button{border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:14px;padding:4px 14px;font:inherit;font-size:13px}
+.lang button.on{background:linear-gradient(135deg,var(--pr),var(--pk));color:#fff;border-color:transparent}
+.pill{background:var(--gd);color:#5a3b00;border-radius:20px;padding:6px 12px;font-weight:bold;white-space:nowrap}
+.card{background:var(--card);border:2px solid var(--bd);border-radius:22px;padding:12px;margin:10px 0;backdrop-filter:blur(6px)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px dashed var(--bd)}
+.row:last-child{border:0}
+.lbl{font-size:16px}.lbl small{display:block;color:var(--mu);font-size:12px}
+.st{display:flex;align-items:center;gap:8px}
+.st button,.chk{width:42px;height:42px;border-radius:50%;border:0;font-size:22px;font-weight:bold;background:linear-gradient(135deg,var(--pr),var(--pk));color:#fff}
+.st button.m{background:var(--bd);color:var(--tx)}
+.st b{min-width:38px;text-align:center;font-size:18px}
+.chk{width:auto;padding:0 16px;border-radius:21px;font-size:15px;font-family:inherit;background:var(--bd);color:var(--tx)}
+.chk.on{background:var(--gn);color:#fff}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:2px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.nav button{flex:1;border:0;background:none;padding:10px 0;font-size:12px;color:var(--mu);font-family:inherit}
+.nav button span{display:block;font-size:24px}
+.nav button.on{color:var(--pr);font-weight:bold}
+.bar{height:16px;background:var(--bd);border-radius:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pr),var(--pk));border-radius:10px;transition:width .5s}
+.big{font-size:44px;text-align:center}
+.boxes{display:flex;justify-content:center;gap:12px;margin:16px 0}
+.box{font-size:64px;background:none;border:0;animation:bob 1.6s infinite ease-in-out}
+.box:nth-child(2){animation-delay:.3s}.box:nth-child(3){animation-delay:.6s}
+@keyframes bob{50%{transform:translateY(-10px) rotate(6deg)}}
+.reveal{text-align:center;font-size:24px;padding:16px;animation:pop .6s}
+@keyframes pop{from{transform:scale(.2);opacity:0}}
+.fl{position:fixed;font-size:28px;pointer-events:none;animation:up 1.1s ease-out forwards;z-index:9}
+@keyframes up{to{transform:translateY(-140px) scale(1.6);opacity:0}}
+input,textarea{width:100%;font:inherit;padding:10px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx)}
+textarea{height:120px}
+.btn{width:100%;padding:12px;border:0;border-radius:14px;background:var(--bd);color:var(--tx);font:inherit;font-size:15px;margin-top:8px}
+.btn.d{background:var(--rd);color:#fff}
+.wk{display:flex;gap:4px;align-items:flex-end;height:120px;margin-top:8px}
+.wk div{flex:1;text-align:center;font-size:11px;color:var(--mu)}
+.wk i{display:block;border-radius:8px 8px 0 0;background:linear-gradient(var(--pk),var(--pr));margin-bottom:3px}
+.wk i.neg{background:var(--rd)}
+.msg{text-align:center;color:var(--mu);padding:8px;font-size:14px}
+.av{border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:18px;padding:4px 12px;font:inherit;font-size:26px;line-height:1.1}
+.av small{display:block;font-size:11px}
+.av.on{background:linear-gradient(135deg,var(--pr),var(--pk));color:#fff;border-color:transparent}
+.kids{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:6px 0}
+.cf{position:fixed;top:-20px;border-radius:2px;pointer-events:none;z-index:20;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.pet{animation:bob 2.2s infinite ease-in-out;line-height:1.2}
+.row input{flex:1;min-width:0}
+</style>
+</head>
+<body>
+<div class="deco"><span style="top:12%;left:8%">✨</span><span style="top:30%;right:6%;animation-delay:1s">🦄</span><span style="top:62%;left:5%;animation-delay:2s">🌈</span><span style="top:80%;right:10%;animation-delay:.5s">⭐</span></div>
+<div id="app"></div>
+<nav class="nav" id="nav"></nav>
+<script>
+var K='setareha_v2';
+var T={
+fa:{app:'ستاره‌های من',hello:'سلام {n} 👋',ask:'امروز چه کارهایی کردی؟',lim:'حد مجاز: {n} {u}',half:'هر نیم ساعت = ۱ ستاره',c:'🍫 شکلات و شیرینی',tv:'📺 تلویزیون',g:'🎮 گیم',s:'📚 درس یا نقاشی',p:'⚽ ورزش و بازی بیرون',h:'🧹 کمک در خانه',b:'🪥 مسواک زدن',z:'🌙 به‌وقت خوابیدن',k:'💛 مهربانی و راستگویی',yes:'✓ شد',no:'نشد',u0:'عدد',u1:'ساعت',saved:'✅ امتیازها خودکار ذخیره می‌شوند. ساعت ۱۲ شب انتخاب‌ها پاک می‌شوند و امتیاز در هفته می‌ماند.',n:['امروز','هفته','تحفه','والدین'],wt:'📊 هفته‌ی من',of:'{a} از {b} امتیاز',ok:'🎉 آفرین! به هدف رسیدی',keep:'کمی دیگر تلاش کن، تحفه در انتظار توست!',daily:'امتیاز هر روز',gt:'🎁 تحفه‌ی آخر هفته',lock:'صندوق‌ها فقط روز جمعه باز می‌شوند.<br>تا آن وقت ستاره جمع کن!',low:'این هفته {a} امتیاز گرفتی و هدف {b} است.<br>هفته‌ی دیگر دوباره تلاش می‌کنیم! 💪',pickb:'آفرین! یک صندوق مرموز را انتخاب کن 👇',your:'تحفه‌ی این هفته‌ات:',next:'هفته‌ی بعد دوباره تلاش کن! ⭐',pt:'👨‍👩‍👧 بخش والدین',pn:'اسم طفل',pg:'امتیاز لازم برای تحفه (کل هفته)',pc:'حد مجاز روزانه: شکلات (عدد)',ptv:'حد مجاز تلویزیون (ساعت)',pgm:'حد مجاز گیم (ساعت)',pgf:'فهرست تحفه‌ها — هر خط یکی: ایموجی + اسم دلخواه (طفل نمی‌بیند)',ton:'✅ حالت آزمایشی فعال',toff:'🧪 فعال‌کردن حالت آزمایشی (صندوق هر روز باز)',reo:'🔄 صندوق این هفته را دوباره باز کن',rs:'🗑️ پاک‌کردن همه اطلاعات',rs2:'⚠️ دوباره بزن تا همه چیز پاک شود',kid:'قهرمان کوچک',st:['تخم','بچه‌ی کوچک','نوجوان','بزرگ','افسانه‌ای'],nx:'{n} ستاره تا مرحله‌ی بعد ⭐',mx:'🏆 به بالاترین مرحله رسیده!',kids:'👧👦 فرزندان (آواتار / اسم / حیوان)',add:'افزودن طفل',pin:'🔒 رمز ۴ رقمی را وارد کن',ppin:'رمز ۴ رقمی والدین (خالی = بدون رمز)',ds:['ش','ی','د','س','چ','پ','ج']},
+en:{app:'My Stars',hello:'Hi {n} 👋',ask:'What did you do today?',lim:'Limit: {n} {u}',half:'Every half hour = 1 star',c:'🍫 Chocolate & sweets',tv:'📺 TV',g:'🎮 Gaming',s:'📚 Study or drawing',p:'⚽ Sports & outdoor play',h:'🧹 Helping at home',b:'🪥 Brushing teeth',z:'🌙 Bed on time',k:'💛 Kindness & honesty',yes:'✓ Done',no:'Not yet',u0:'pcs',u1:'h',saved:'✅ Points save automatically. At midnight the checkmarks reset, but the points stay in the week.',n:['Today','Week','Gift','Parents'],wt:'📊 My Week',of:'{a} of {b} points',ok:'🎉 Well done! Goal reached',keep:'A little more effort, a gift is waiting!',daily:'Points per day',gt:'🎁 Weekend Gift',lock:'The boxes open on Friday only.<br>Collect stars until then!',low:'You have {a} points this week, the goal is {b}.<br>Let us try again next week! 💪',pickb:'Great job! Pick a mystery box 👇',your:'Your gift this week:',next:'Try again next week! ⭐',pt:'👨‍👩‍👧 Parents',pn:'Child name',pg:'Points needed for the gift (whole week)',pc:'Daily limit: chocolate (pcs)',ptv:'TV limit (hours)',pgm:'Gaming limit (hours)',pgf:'Gift list, one per line: emoji + optional name (child cannot see)',ton:'✅ Test mode on',toff:'🧪 Enable test mode (box open every day)',reo:"🔄 Re-open this week's box",rs:'🗑️ Erase all data',rs2:'⚠️ Tap again to erase everything',kid:'Little Champ',st:['Egg','Baby','Young','Grown','Legend'],nx:'{n} stars to the next stage ⭐',mx:'🏆 Top stage reached!',kids:'👧👦 Children (avatar / name / pet)',add:'Add child',pin:'🔒 Enter 4-digit PIN',ppin:'Parent PIN (4 digits, empty = none)',ds:['Sa','Su','Mo','Tu','We','Th','Fr']},
+de:{app:'Meine Sterne',hello:'Hallo {n} 👋',ask:'Was hast du heute gemacht?',lim:'Limit: {n} {u}',half:'Jede halbe Stunde = 1 Stern',c:'🍫 Schokolade & Süßes',tv:'📺 Fernsehen',g:'🎮 Zocken',s:'📚 Lernen oder Malen',p:'⚽ Sport & draußen spielen',h:'🧹 Hilfe im Haushalt',b:'🪥 Zähneputzen',z:'🌙 Pünktlich ins Bett',k:'💛 Freundlich & ehrlich',yes:'✓ Geschafft',no:'Noch nicht',u0:'Stk.',u1:'Std.',saved:'✅ Punkte werden automatisch gespeichert. Um Mitternacht werden die Häkchen zurückgesetzt, die Punkte bleiben in der Woche.',n:['Heute','Woche','Geschenk','Eltern'],wt:'📊 Meine Woche',of:'{a} von {b} Punkten',ok:'🎉 Super! Ziel erreicht',keep:'Noch etwas Mühe, ein Geschenk wartet!',daily:'Punkte pro Tag',gt:'🎁 Wochenend-Geschenk',lock:'Die Kisten öffnen sich nur freitags.<br>Sammle bis dahin Sterne!',low:'Diese Woche hast du {a} Punkte, das Ziel ist {b}.<br>Nächste Woche versuchen wir es wieder! 💪',pickb:'Super! Wähle eine Geheimkiste 👇',your:'Dein Geschenk diese Woche:',next:'Nächste Woche wieder! ⭐',pt:'👨‍👩‍👧 Eltern',pn:'Name des Kindes',pg:'Punkte für das Geschenk (ganze Woche)',pc:'Tageslimit: Schokolade (Stk.)',ptv:'Limit Fernsehen (Std.)',pgm:'Limit Zocken (Std.)',pgf:'Geschenkliste, eine pro Zeile: Emoji + optionaler Name (Kind sieht sie nicht)',ton:'✅ Testmodus an',toff:'🧪 Testmodus aktivieren (Kiste täglich offen)',reo:'🔄 Kiste dieser Woche neu öffnen',rs:'🗑️ Alle Daten löschen',rs2:'⚠️ Nochmal tippen zum Löschen',kid:'Kleiner Champion',st:['Ei','Baby','Jung','Groß','Legende'],nx:'Noch {n} Sterne bis zur nächsten Stufe ⭐',mx:'🏆 Höchste Stufe erreicht!',kids:'👧👦 Kinder (Avatar / Name / Tier)',add:'Kind hinzufügen',pin:'🔒 4-stellige PIN eingeben',ppin:'Eltern-PIN (4 Ziffern, leer = keine)',ds:['Sa','So','Mo','Di','Mi','Do','Fr']}};
+var def={lang:'fa',kids:[],cur:0,pin:0,target:15,lim:{c:2,tv:1,g:1},test:false,gifts:['🚗','🧸','🍫','🎨','🧩','⚽','🚁','🪁','🍭','🎲']};
+var S;try{S=JSON.parse(localStorage.getItem(K))||clone(def)}catch(e){S=clone(def)}
+fix();
+var tab='today',pick=null,rs=0,unl=false,dl=-1,now,TK,WS,WK;
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function t(k){return T[S.lang][k]}
+function f(s,o){return s.replace(/\{(\w)\}/g,function(m,k){return o[k]})}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function dk(d){return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function wstart(d){var x=new Date(d);x.setDate(x.getDate()-(x.getDay()+1)%7);return x}
+function clock(){now=new Date();TK=dk(now);WS=wstart(now);WK=dk(WS)}
+function day(k){return C().days[k]||(C().days[k]={c:0,tv:0,g:0,s:0,p:0,h:0,b:0,z:0,k:0})}
+function sc(d){var L=S.lim,pos=d.s*2+d.p*2+d.h+d.b+d.z+d.k;
+var neg=Math.max(0,d.c-L.c)+Math.ceil(Math.max(0,d.tv-L.tv)*2)+Math.ceil(Math.max(0,d.g-L.g)*2);return{pos:pos,neg:neg,net:pos-neg}}
+function weekDays(){var a=[];for(var i=0;i<7;i++){var x=new Date(WS);x.setDate(x.getDate()+i);a.push(dk(x))}return a}
+function weekScore(){var s=0;weekDays().forEach(function(k){if(C().days[k])s+=sc(C().days[k]).net});return Math.max(0,s)}
+function snd(fr){try{var a=new(window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator(),g=a.createGain();o.frequency.value=fr;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(.2,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.3);o.start();o.stop(a.currentTime+.3)}catch(e){}}
+function fly(e,em){var r=document.createElement('div');r.className='fl';r.textContent=em;var b=e.target.getBoundingClientRect();r.style.left=(b.left+10)+'px';r.style.top=b.top+'px';document.body.appendChild(r);setTimeout(function(){r.remove()},1100)}
+var items=[['c',1,0],['tv',.5,0],['g',.5,0],['s',.5,1],['p',.5,1]],checks=['h','b','z','k'];
+function step(k,dl,e){var d=day(TK),it=items.filter(function(i){return i[0]==k})[0];d[k]=Math.max(0,d[k]+dl*it[1]);save();
+if(dl>0&&it[2]){fly(e,'⭐');snd(880)}else if(dl>0){fly(e,'😬');snd(220)}render()}
+function tg(k,e){var d=day(TK);d[k]=d[k]?0:1;save();if(d[k]){fly(e,'⭐');snd(990)}render()}
+function vToday(){var d=day(TK),s=sc(d),ws=weekScore();
+var h='<div class="top"><div><h1>'+f(t('hello'),{n:C().name||t('kid')})+'</h1><div style="color:var(--mu);font-size:13px">'+t('ask')+'</div></div><div class="pill">⭐ '+ws+'/'+S.target+'</div></div>'+pet()+'<div class="card">';
+items.forEach(function(it){var k=it[0],lim=S.lim[k];
+h+='<div class="row"><div class="lbl">'+t(k)+'<small>'+(lim!=null?f(t('lim'),{n:lim,u:t(k=='c'?'u0':'u1')}):t('half'))+'</small></div><div class="st"><button class="m" onclick="step(\''+k+'\',-1,event)">−</button><b>'+d[k]+'</b><button onclick="step(\''+k+'\',1,event)">+</button></div></div>'});
+h+='</div><div class="card">';
+checks.forEach(function(c){h+='<div class="row"><div class="lbl">'+t(c)+'</div><button class="chk '+(d[c]?'on':'')+'" onclick="tg(\''+c+'\',event)">'+(d[c]?t('yes'):t('no'))+'</button></div>'});
+return h+'</div><div class="card"><div style="display:flex;justify-content:space-around;text-align:center"><div>⭐<br><b style="font-size:22px;color:var(--gn)">+'+s.pos+'</b></div><div>😬<br><b style="font-size:22px;color:var(--rd)">−'+s.neg+'</b></div><div>🏅<br><b style="font-size:22px">'+s.net+'</b></div></div></div><div class="msg">'+t('saved')+'</div>'}
+function vWeek(){var ws=weekScore(),p=Math.min(100,ws/S.target*100),ks=weekDays(),mx=1;
+ks.forEach(function(k){if(C().days[k])mx=Math.max(mx,Math.abs(sc(C().days[k]).net))});
+var h='<h1>'+t('wt')+'</h1><div class="card"><div style="display:flex;justify-content:space-between"><b>'+f(t('of'),{a:ws,b:S.target})+'</b><span>'+Math.round(p)+'%</span></div><div class="bar" style="margin-top:8px"><i style="width:'+p+'%"></i></div><div class="msg">'+(ws>=S.target?t('ok'):t('keep'))+'</div></div><div class="card"><b>'+t('daily')+'</b><div class="wk" dir="ltr">';
+ks.forEach(function(k,i){var n=C().days[k]?sc(C().days[k]).net:0;h+='<div><i class="'+(n<0?'neg':'')+'" style="height:'+(Math.abs(n)/mx*80+2)+'px"></i>'+n+'<br>'+t('ds')[i]+'</div>'});
+return h+'</div></div>'}
+function rv(g){var p=g.split(' ');return '<div class="reveal">🎉<div style="font-size:96px;line-height:1.2">'+p[0]+'</div>'+p.slice(1).join(' ')+'</div>'}
+function vGift(){var ws=weekScore(),ok=ws>=S.target,fri=now.getDay()==5||S.test,done=C().claimed[WK];
+var h='<h1>'+t('gt')+'</h1><div class="card">';
+if(done)return h+'<div class="msg">'+t('your')+'</div>'+rv(done)+'<div class="msg">'+t('next')+'</div></div>';
+if(!fri)return h+'<div class="big">🔒</div><div class="msg">'+t('lock')+'</div></div>';
+if(!ok)return h+'<div class="big">😢</div><div class="msg">'+f(t('low'),{a:ws,b:S.target})+'</div></div>';
+h+='<div class="msg">'+t('pickb')+'</div><div class="boxes">';
+for(var i=0;i<3;i++)h+='<button class="box" onclick="open_()">🎁</button>';
+return h+'</div></div>'}
+function confetti(){var c=['#a855f7','#ec4899','#ffc933','#2fbf80','#3b9cff','#ff8a3d'];for(var i=0;i<80;i++){var d=document.createElement('i');d.className='cf';d.style.left=Math.random()*100+'vw';d.style.background=c[i%6];d.style.animationDuration=(2+Math.random()*2)+'s';d.style.animationDelay=(Math.random()*.7)+'s';d.style.width=(6+Math.random()*8)+'px';d.style.height=(10+Math.random()*10)+'px';document.body.appendChild(d);setTimeout(function(x){x.remove()},5500,d)}}
+function open_(){if(!S.gifts.length)return;var g=S.gifts[Math.floor(Math.random()*S.gifts.length)];C().claimed[WK]=g;save();snd(660);setTimeout(function(){snd(880)},150);render();confetti()}
+function inp(k,lbl,v,ex){return '<label>'+t(lbl)+'</label><input '+(ex||'type="number"')+' value="'+v+'" onchange="'+k+'">'}
+function vParent(){if(S.pin&&!unl)return '<h1>'+t('pt')+'</h1><div class="card"><div class="big">🔒</div><div class="msg">'+t('pin')+'</div><input type="password" inputmode="numeric" maxlength="4" style="text-align:center;font-size:28px;letter-spacing:12px" oninput="chk(this)"></div>';
+var L=S.lim;return '<h1>'+t('pt')+'</h1><div class="card">'+kidsUI()
++inp('var v=this.value.replace(/\\D/g,String());S.pin=v.length==4?v:0;this.value=S.pin||String();save()','ppin',S.pin||'','type="text" inputmode="numeric" maxlength="4"')+'<br><br>'
++inp('S.target=+this.value||1;save()','pg',S.target)+'<br><br>'
++inp('S.lim.c=+this.value;save()','pc',L.c)+'<br><br>'
++inp('S.lim.tv=+this.value;save()','ptv',L.tv,'type="number" step=".5"')+'<br><br>'
++inp('S.lim.g=+this.value;save()','pgm',L.g,'type="number" step=".5"')+'</div>'
++'<div class="card"><label>'+t('pgf')+'</label><textarea onchange="S.gifts=this.value.split(\'\\n\').filter(Boolean);save()">'+S.gifts.join('\n')+'</textarea></div>'
++'<div class="card"><button class="btn" onclick="S.test=!S.test;save();render()">'+t(S.test?'ton':'toff')+'</button><button class="btn" onclick="delete C().claimed[WK];save();render()">'+t('reo')+'</button><button class="btn d" onclick="resetAll()">'+t(rs?'rs2':'rs')+'</button></div>'}
+function resetAll(){if(!rs){rs=1;render();setTimeout(function(){if(rs){rs=0;render()}},4000);return}var l=S.lang;S=clone(def);S.lang=l;fix();rs=0;unl=false;save();render()}
+function setL(l){S.lang=l;save();render()}
+var AV=['🦄','🐱','🐶','🦊','🐼','🐯','🐰','🐸','🦁','🐵'],PETS=[['🥚','🐣','🐥','🦆','🦚'],['🥚','🦎','🐊','🐲','🐉'],['🥚','🐛','🐝','🦋','🧚']];
+function mk(n,a){return{name:n,av:a,pet:0,days:{},claimed:{}}}
+function fix(){if(!S.kids||!S.kids.length){var k=mk(S.kid||'','🦄');if(S.days)k.days=S.days;if(S.claimed)k.claimed=S.claimed;S.kids=[k];S.cur=0}delete S.days;delete S.claimed;delete S.kid;if(!S.kids[S.cur])S.cur=0}
+function C(){return S.kids[S.cur]||S.kids[0]}
+function e(x){return (x||'').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+function tot(){var n=0,d=C().days;for(var k in d)n+=sc(d[k]).pos;return n}
+function pet(){var P=PETS[C().pet||0],n=tot(),th=[0,10,30,60,100],i=0;th.forEach(function(x,j){if(n>=x)i=j});var nx=th[i+1],p=nx?(n-th[i])/(nx-th[i])*100:100;
+return '<div class="card" style="text-align:center"><div class="pet" style="font-size:'+(54+i*12)+'px">'+P[i]+'</div><b>'+t('st')[i]+'</b><div class="bar" style="margin:8px 0 4px"><i style="width:'+p+'%"></i></div><small style="color:var(--mu)">'+(nx?f(t('nx'),{n:nx-n}):t('mx'))+'</small></div>'}
+function chips(){if(tab=='parent'||S.kids.length<2)return '';return '<div class="kids">'+S.kids.map(function(k,i){return '<button class="av '+(i==S.cur?'on':'')+'" onclick="setK('+i+')">'+k.av+'<small>'+(k.name||t('kid'))+'</small></button>'}).join('')+'</div>'}
+function setK(i){S.cur=i;save();render()}
+function kidsUI(){var h='<b>'+t('kids')+'</b>';S.kids.forEach(function(k,i){h+='<div class="row"><button class="chk" onclick="cyc('+i+',\'av\')">'+k.av+'</button><input value="'+e(k.name)+'" placeholder="'+t('kid')+'" onchange="S.kids['+i+'].name=this.value;save()"><button class="chk" onclick="cyc('+i+',\'pet\')">'+PETS[k.pet||0][3]+'</button>'+(S.kids.length>1?'<button class="chk" onclick="delK('+i+')">'+(dl===i?'⚠️':'🗑️')+'</button>':'')+'</div>'});return h+'<button class="btn" onclick="addK()">➕ '+t('add')+'</button><br><br>'}
+function cyc(i,w){var k=S.kids[i];if(w=='av')k.av=AV[(AV.indexOf(k.av)+1)%AV.length];else k.pet=((k.pet||0)+1)%PETS.length;save();render()}
+function delK(i){if(dl!==i){dl=i;render();setTimeout(function(){if(dl===i){dl=-1;render()}},4000);return}S.kids.splice(i,1);S.cur=0;dl=-1;save();render()}
+function addK(){S.kids.push(mk('',AV[S.kids.length%AV.length]));save();render()}
+function chk(el){if(el.value.length==4){if(el.value==S.pin){unl=true;render()}else{el.value='';el.placeholder='❌'}}}
+function render(){clock();var fa=S.lang=='fa',d=document.documentElement;d.lang=S.lang;d.dir=fa?'rtl':'ltr';document.title='⭐ '+t('app');
+var v={today:vToday,week:vWeek,gift:vGift,parent:vParent}[tab]();
+var lg='<div class="lang">'+[['fa','دری'],['en','EN'],['de','DE']].map(function(l){return '<button class="'+(S.lang==l[0]?'on':'')+'" onclick="setL(\''+l[0]+'\')">'+l[1]+'</button>'}).join('')+'</div>';
+document.getElementById('app').innerHTML=lg+chips()+v;
+var n=[['today','📝'],['week','📊'],['gift','🎁'],['parent','👨‍👩‍👧']];
+document.getElementById('nav').innerHTML=n.map(function(x,i){return '<button class="'+(tab==x[0]?'on':'')+'" onclick="go(\''+x[0]+'\')"><span>'+x[1]+'</span>'+t('n')[i]+'</button>'}).join('')}
+function go(x){if(x!='parent')unl=false;tab=x;render();window.scrollTo(0,0)}
+render();
+setInterval(function(){if(dk(new Date())!=TK)render()},30000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&dk(new Date())!=TK)render()});
+</script>
+</body>
+</html>
