@@ -1,6 +1,5 @@
 
 My Stars ⭐
- اپلیکیشن ساده برای کودکان.
 
 [Select the app here.](https://anita-2021.github.io/my-stars/)
 
@@ -11,7 +10,7 @@ A simple way for parents to encourage good habits and reward kids at the end of 
 👉 Open My Stars (https://anita-2021.github.io/my-stars/)
 No download or sign-up needed. It works right in your browser.
 ## ✨ How it works
-- **Good deeds earn points. Studying, drawing, tidying up the room, brushing teeth, and going to bed on time all - **add positive points.
+- **Good deeds earn points. Studying, drawing, tidying up the room, brushing teeth, and going to bed on time all add positive points.
 - **Not-so-good choices lose points. Too much gaming or too many sweets add negative points.
 - **Reach 15 positive points by the end of the week and your child earns a special gift! 🎁
 ## 💡 Why My Stars?
